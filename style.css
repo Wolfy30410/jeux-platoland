@@ -1,0 +1,81 @@
+:root{
+  --bg:#121212; --panel:#1e1e1e; --panel2:#2b2b2b; --text:#e8e8e8;
+  --primary:#1e88e5; --success:#43a047; --danger:#e53935; --warn:#ffc107;
+  --gold:#ffd700; --silver:#c0c0c0; --bronze:#cd7f32;
+}
+
+body{
+  margin:0; padding:0; background:var(--bg); color:var(--text);
+  font-family:system-ui,Segoe UI,Roboto,Arial;
+}
+
+.wrap{max-width:1200px; margin:16px auto; padding:12px}
+h1{text-align:center}
+.section{background:var(--panel); padding:14px; border-radius:10px; margin:12px 0}
+.row{display:flex; gap:8px; flex-wrap:wrap; align-items:center}
+
+select,input{
+  background:var(--panel2); color:var(--text); border:1px solid #333;
+  padding:8px; border-radius:8px; min-width:150px;
+}
+
+button{border:0; padding:9px 12px; border-radius:8px; font-weight:700; cursor:pointer}
+.btn-primary{background:var(--primary); color:#fff}
+.btn-success{background:var(--success); color:#fff}
+.btn-danger{background:var(--danger); color:#fff}
+.btn-warn{background:var(--warn); color:#000}
+
+.rating button{font-size:22px; background:transparent; border:0; color:#777; cursor:pointer}
+.rating button.selected{color:#ffd54f}
+
+.podium{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px}
+.podium .box{
+  flex:1; padding:10px; border-radius:10px; background:var(--panel2);
+  text-align:center; min-width:200px;
+}
+.first{outline:3px solid var(--gold)}
+.second{outline:3px solid var(--silver)}
+.third{outline:3px solid var(--bronze)}
+
+.top-list{margin-top:12px; max-height:400px; overflow-y:auto}
+.top-item{
+  background:var(--panel2); padding:10px; border-radius:8px; margin-bottom:6px;
+  display:flex; justify-content:space-between; align-items:center;
+}
+
+.stats{font-size:0.9em; color:#aaa}
+.search-box{width:100%; margin-bottom:10px}
+
+.autocomplete{position:relative; display:inline-block}
+.autocomplete-items{
+  position:absolute; border:1px solid #333; background:var(--panel2);
+  max-height:200px; overflow-y:auto; width:100%; z-index:99; top:100%;
+}
+.autocomplete-item{padding:8px; cursor:pointer; border-bottom:1px solid #333}
+.autocomplete-item:hover{background:var(--panel)}
+
+.pagination{display:flex; gap:8px; justify-content:center; margin:10px 0}
+.pagination button{padding:6px 12px; font-size:12px}
+.pagination button.active{background:var(--primary); color:white}
+
+ul{padding-left:0; max-height:300px; overflow-y:auto; list-style:none}
+.counter{background:var(--panel2); padding:4px 8px; border-radius:4px; font-size:0.8em}
+
+/* Status de connexion */
+.status{
+  padding:4px 8px; border-radius:4px; font-size:0.8em; font-weight:bold;
+}
+.status.online{background:#43a047; color:white}
+.status.offline{background:#e53935; color:white}
+.status.syncing{background:#ffc107; color:black}
+
+/* Loader */
+.loader{text-align:center; padding:20px; font-size:1.1em}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .wrap{margin:8px; padding:8px}
+  .row{flex-direction:column; align-items:stretch}
+  .podium{flex-direction:column}
+  .podium .box{min-width:auto}
+}{\rtf1}

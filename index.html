@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>🎲 Notation des Jeux</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>🎲 Notation des Jeux 🎲</h1>
+    
+    <div id="loading" class="section">
+      <div class="loader">⏳ Chargement des données...</div>
+    </div>
+
+    <!-- Status de connexion -->
+    <div class="section">
+      <div class="row">
+        <div id="connectionStatus" class="status offline">🔴 Hors ligne</div>
+        <div class="counter">👥 <span id="playerCount">0</span> Joueurs</div>
+        <div class="counter">🎲 <span id="gameCount">0</span> Jeux</div>
+        <div class="counter">⭐ <span id="ratingCount">0</span> Votes</div>
+      </div>
+    </div>
+
+    <!-- Gestion votes -->
+    <div class="section">
+      <div class="row" style="margin-bottom: 12px;">
+        <label>Joueur</label>
+        <div class="autocomplete">
+          <input id="playerInput" type="text" placeholder="Chercher ou ajouter joueur" autocomplete="off">
+          <div id="playerAutocomplete" class="autocomplete-items"></div>
+        </div>
+        <button id="btnAddPlayer" class="btn-success">Ajouter</button>
+      </div>
+      <div class="row" style="margin-bottom: 12px;">
+        <label>Jeu</label>
+        <div class="autocomplete">
+          <input id="gameInput" type="text" placeholder="Chercher ou ajouter jeu" autocomplete="off">
+          <div id="gameAutocomplete" class="autocomplete-items"></div>
+        </div>
+        <button id="btnAddGame" class="btn-success">Ajouter</button>
+      </div>
+      <div class="row" style="margin-bottom: 12px;">
+        <label>Date</label>
+        <input id="voteDate" type="date">
+        <div id="ratingStars" class="rating"></div>
+      </div>
+      <div class="row">
+        <button id="btnSave" class="btn-primary">Enregistrer vote</button>
+        <button id="btnSync" class="btn-warn">🔄 Synchroniser</button>
+        <button id="btnExport" class="btn-warn">📤 Exporter</button>
+        <button id="btnRestore" class="btn-success">📥 Restaurer</button>
+        <input id="restoreFile" type="file" accept="application/json" style="display:none">
+      </div>
+    </div>
+
+    <!-- Recherche globale -->
+    <div class="section">
+      <input id="globalSearch" type="text" placeholder="🔍 Rechercher un jeu..." class="search-box">
+    </div>
+
+    <!-- Top mensuel -->
+    <div class="section">
+      <h3>📅 Top Mensuel</h3>
+      <div class="row">
+        <label>Mois</label>
+        <select id="monthSelect">
+          <option value="">Tous les mois</option>
+        </select>
+        <label>Année</label>
+        <select id="yearSelect"></select>
+      </div>
+      <div id="monthlyTop" class="top-list"></div>
+    </div>
+
+    <!-- Top annuel -->
+    <div class="section">
+      <h3>📆 Top Annuel</h3>
+      <div class="row">
+        <label>Année</label>
+        <select id="yearSelectAnnual"></select>
+      </div>
+      <div id="annualTop" class="top-list"></div>
+    </div>
+
+    <!-- Top général avec pagination -->
+    <div class="section">
+      <h3>🏆 Classement Général</h3>
+      <div class="row">
+        <label>Afficher par page:</label>
+        <select id="pageSize">
+          <option value="10">10</option>
+          <option value="25" selected>25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+      <div id="generalTop" class="top-list"></div>
+      <div id="pagination" class="pagination"></div>
+    </div>
+
+    <!-- Top popularité -->
+    <div class="section">
+      <h3>🔥 Top 20 — Jeux les plus joués</h3>
+      <div id="popularTop" class="top-list"></div>
+    </div>
+
+    <!-- Historique -->
+    <div class="section">
+      <h3>📝 Historique récent (50 derniers votes)</h3>
+      <ul id="historyList"></ul>
+    </div>
+
+    <!-- Impression -->
+    <div class="section">
+      <h3>🖨️ Impression des statistiques</h3>
+      <div class="row">
+        <button id="btnPrintGames" class="btn-primary">🖨️ Imprimer statistiques par Jeux</button>
+        <button id="btnPrintPlayers" class="btn-primary">🖨️ Imprimer statistiques par Joueurs</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>{\rtf1}
