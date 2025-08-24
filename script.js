@@ -1,7 +1,7 @@
 // Configuration de l'API cloud
 const API_BASE = 'https://api.jsonbin.io/v3/b';
-const API_KEY = 'VOTRE_CLE_API_JSONBIN'; // À obtenir sur jsonbin.io
-const BIN_ID = 'VOTRE_BIN_ID'; // ID du stockage
+const API_KEY = '$2a$10$RPdQRaN.9mRgdt12pRpHpe6yZHVWkfirh61ZEQpNSobRsrWM.Dvh.'; // À obtenir sur jsonbin.io
+const BIN_ID = '68ab456843b1c97be9281168'; // ID du stockage
 
 // Données locales avec cache
 let players = new Set();
